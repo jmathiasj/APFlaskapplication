@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 500px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(252, 251, 251);
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 500px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+   
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.inp {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="#about">Words Based Palette</a>
+  <div class='inp'>
+  <form>
+ 
+    <input type="text" id="fname" name="firstname" placeholder="Type separate comma separated words for to generate a 
+palette..">
+
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+  
+  <a href="#services">Theme Based Palette</a>
+    <div class='inp'>
+  <form>
+ 
+    <input type="text" id="fname" name="firstname" placeholder="Type the overall theme of the palette (one or more descriptive words)..">
+
+    </select>
+      <p>Choose Palette type:</p>
+
+
+
+
+
+
+  <input type="radio" id="mono" name="fav_language" value="HTML">
+  <label for="html">Monochromatic</label><br>
+  <input type="radio" id="div" name="fav_language" value="CSS">
+  <label for="css">Divergent/Complementary</label><br>
+  <input type="radio" id="analogous" name="fav_language" value="JavaScript">
+  <label for="javascript">Analogous</label>
+  <br>
+  <br>
+  
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+</div>
+
+<div class="main w3-container" id="about" style="margin-top:75px">
+  <h1 class="w3-xxxlarge w3-text-red"><b>Words Based Palette</b></h1>
+  <p>Palette goes here</p>
+
+</div>
+
+<div class="main w3-container" id="services" style="margin-top:75px">
+  <h1 class="w3-xxxlarge w3-text-red"><b>Theme Based Palette</b></h1>
+ <p>Palette goes here</p>
+
+</div>
+   
+</body>
+</html> 
