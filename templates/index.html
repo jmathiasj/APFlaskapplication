@@ -2,11 +2,12 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./static/css/style.css">
 <style>
 body {
   font-family: "Lato", sans-serif;
 }
-
 .sidenav {
   height: 100%;
   width: 500px;
@@ -78,37 +79,119 @@ input[type=submit]:hover {
   margin-left: 10px;
 }
 
+div .box{
+  height: 6vh;
+  width: 20vh;
+  display: inline-block;
+  border: 4px solid transparent;
+  margin-top: 4px;
+  padding: 2;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+
+}
+
+h6{
+color: black ;
+padding: 10px;
+}
+
+/* #a{ */
+  /* background-color: #dcb684; */
+/* } */
+/*  */
+/* #b{ */
+  /* background-color: #d78b79; */
+/* } */
+/*  */
+/* #c{ */
+  /* background-color: #688154; */
+/* } */
+/*  */
+/* #d{ */
+  /* background-color: #dca084; */
+/* } */
+/*  */
+/* #e{ */
+  /* background-color: #dca084; */
+/* } */
+
+.wrap {
+    min-height: 100px;
+    max-width: 200px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-left: 350px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* overflow:hidden; */
+  }
+  .wrap .half {
+    width: 50%;
+    padding: 32px 0;
+  }
+  div .box{
+    height: 5vh;
+    width: 22vh;
+    display: inline-block;
+    border: 2px solid transparent;
+    margin-top: 4px;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+  }
+  .title {
+    font-family: sans-serif;
+    line-height: 24px;
+    display: block;
+    padding: 8px 0;
+  }
+  
+  .readout {
+    margin-top: 32px;
+    line-height: 180%;
+  }
+  
+  #values {
+    font-family: monospace;
+    line-height: 150%;
+  }
+  
+  .link {
+    margin-top: 16px;
+  }
+  .link a {
+    color: MediumSlateBlue;
+  }
+  
 </style>
 </head>
 <body>
 
 <div class="sidenav">
-  <a href="#about">Words Based Palette</a>
+  <a href="#tab1">Words Based Palette</a>
   <div class='inp'>
   <form>
  
-    <input type="text" id="fname" name="firstname" placeholder="Type separate comma separated words for to generate a 
+    <input type="text" id="word" placeholder="Type separate comma separated words for to generate a 
 palette..">
-
-    </select>
   
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" id="wordSub">
   </form>
 </div>
   
-  <a href="#services">Theme Based Palette</a>
+  <a href="#tab2">Theme Based Palette</a>
     <div class='inp'>
   <form>
  
-    <input type="text" id="fname" name="firstname" placeholder="Type the overall theme of the palette (one or more descriptive words)..">
+    <input type="text" id="theme" placeholder="Type the overall theme of the palette (one or more descriptive words)..">
 
     </select>
       <p>Choose Palette type:</p>
-
-
-
-
-
 
   <input type="radio" id="mono" name="fav_language" value="HTML">
   <label for="html">Monochromatic</label><br>
@@ -125,18 +208,293 @@ palette..">
 </div>
 
 </div>
+  <div class="main w3-container" id="tab1" style="margin-top:100px;margin-left: 605px;">
+    <div style="height: 50px;"></div>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Words Based Palette</b></h1>
+    <!-- <p>Palette goes here</p> -->
+    <div id="boxes">
+      <div class="box" id="a" >
+      <h6 id="ah">Color</h6>
+      </div>
+      
+      <div class="box" id="b">
+      <h6 id="bh">Color</h6>
+      </div>
+      
+      <div class="box" id="c">
+      <h6 id="ch">Color</h6>
+      </div>
+      
+      <div class="box" id="d">
+      <h6 id="dh">Color</h6>
+      </div>
+    </div>
+  
+    <div id = "input" style="display: none;">
+      <input id="hexInput"></input>
+      <input id="hexInput1"></input>
+      <input id="hexInput2"></input>
+      <input id="hexInput3"></input>
+    </div>
+   
+    <div id = "Color-pickers" style="margin-top: 400px;">
+      <div class="ColorPicker" id="sliderPicker" style="margin-top: 15px;margin-bottom: 15px">
+      </div>
+      <div class="ColorPicker" id="sliderPicker1" style="margin-top: 15px;margin-bottom: 15px">
+      </div>
+      <div class="ColorPicker" id="sliderPicker2" style="margin-top: 15px;margin-bottom: 15px">
+      </div>
+      <div class="ColorPicker" id="sliderPicker3" style="margin-top: 15px;margin-bottom: 15px">
+      </div>
+  </div>
+  
+  <div id="blank" style="margin-top: 300px;"></div>
+  
+  
+  </div>
 
-<div class="main w3-container" id="about" style="margin-top:75px">
-  <h1 class="w3-xxxlarge w3-text-red"><b>Words Based Palette</b></h1>
-  <p>Palette goes here</p>
 
-</div>
 
-<div class="main w3-container" id="services" style="margin-top:75px">
-  <h1 class="w3-xxxlarge w3-text-red"><b>Theme Based Palette</b></h1>
- <p>Palette goes here</p>
+</body>
+</html>
+<!-- partial -->
+<script src='https://cdn.jsdelivr.net/npm/@jaames/iro/dist/iro.min.js'></script><script  src="./static/js/scripts.js"></script>
+<script>
 
-</div>
+
+
+
+
+  // Create a new color picker instance
+// https://iro.js.org/guide.html#getting-started
+// var colorPicker = new iro.ColorPicker(".colorPicker", {
+// 
+// 
+    // width: 0,
+    // color: "rgb(255, 0, 0)",
+    // borderWidth: 1,
+    // borderColor: "#fff" });
+  // 
+    // It's all sliders
+  var sliderPicker = new iro.ColorPicker("#sliderPicker", {
+    width: 1000,
+    color: "#490069",
+    borderWidth: 1,
+    borderColor: "#fff",
+    handleRadius : 12,
+    layout: [
+      {
+        component: iro.ui.Slider,
+        options: {
+          sliderType: 'value'
+        }
+      },
+  
+    ]
+  });
+
+  var sliderPicker1 = new iro.ColorPicker("#sliderPicker1", {
+  width: 1000,
+  color: "#00005e",
+  borderWidth: 1,
+  handleRadius : 12,
+  borderColor: "#fff",
+  layout: [
+    {
+      component: iro.ui.Slider,
+      options: {
+        sliderType: 'value'
+      }
+    },
+  
+  ]
+});
+
+var sliderPicker2 = new iro.ColorPicker("#sliderPicker2", {
+  width: 1000,
+  color: "#87CEEB",
+  borderWidth: 1,
+  handleRadius : 12,
+  borderColor: "#fff",
+  layout: [
+    {
+      component: iro.ui.Slider,
+      options: {
+        sliderType: 'value'
+      }
+    },
+  
+  ]
+});
+
+var sliderPicker3 = new iro.ColorPicker("#sliderPicker3", {
+  width: 1000,
+  color: "#FB6894",
+  borderWidth: 1,
+  handleRadius : 12,
+  borderColor: "#fff",
+  layout: [
+    {
+      component: iro.ui.Slider,
+      options: {
+        sliderType: 'value'
+      }
+    },
+  
+  ]
+});
+  // document.getElementById("wordSub").addEventListener('click', function () {
+    // var x = document.getElementById("word");
+    // var nameArr = x.split(',')
+    // document.getElementById("ah").innerHTML=nameArr[0]
+    // document.getElementById("bh").innerHTML=nameArr[1]
+    // document.getElementById("ch").innerHTML=nameArr[2]
+    // document.getElementById("dh").innerHTML=nameArr[3]
+  // 
+    // 
+
+
+    // console.log(x.value);
+//  });
+var input_word =  document.getElementById("word")
+var word1 = "a"
+var word2 = "b"
+var word3 = "c"
+var word4 = "d"
+
+let hmap = new Map(
+    [
+      ["a", "#490069"],
+      ["b", "#00005e"],
+      ["c", "#87ceeb"],
+      ["d", "#fb6894"],
+      ["Queen", "#490069"],
+      ["King", "#00005e"],
+      ["Prince", "#87ceeb"],
+      ["Princess", "#fb6894"],
+      [" Queen", "#490069"],
+      [" King", "#00005e"],
+      [" Prince", "#87ceeb"],
+      [" Princess", "#fb6894"],
+      ["queen", "#490069"],
+      ["king", "#00005e"],
+      ["prince", "#87ceeb"],
+      ["princess", "#fb6894"],
+    ]
+  )
+
+var color = hmap.get(word1)
+var color1 = hmap.get(word2)
+var color2 = hmap.get(word3)
+var color3 = hmap.get(word4)
+
+input_word.addEventListener('change', function(){
+  var x = document.getElementById("word").value;
+  var nameArr = x.split(",")
+  console.log(nameArr)
+
+  word1 = nameArr[0]
+  word2 = nameArr[1]
+  word3 = nameArr[2]
+  word4 = nameArr[3]
+  document.getElementById("ah").innerHTML=nameArr[0]
+  document.getElementById("bh").innerHTML=nameArr[1]
+  document.getElementById("ch").innerHTML=nameArr[2]
+  document.getElementById("dh").innerHTML=nameArr[3]
+  // sliderPicker.color.hexString = '#A020F0';
+  var color = hmap.get(word1)
+  var color1 = hmap.get(word2)
+  var color2 = hmap.get(word3)
+  var color3 = hmap.get(word4)
+
+  sliderPicker.color.hexString = color;
+  sliderPicker1.color.hexString = color1;
+  sliderPicker2.color.hexString = color2;
+  sliderPicker3.color.hexString = color3;
+
+  
+});
+
+
+
+  var hexInput = document.getElementById("hexInput");
+  var hexInput1 = document.getElementById("hexInput1");
+  var hexInput2 = document.getElementById("hexInput2");
+  var hexInput3 = document.getElementById("hexInput3");
+
+
+  console.log(hexInput)
+  // https://iro.js.org/guide.html#color-picker-events
+  sliderPicker.on(["color:init", "color:change"], function (color) {
+    // Show the current color in different formats
+    // Using the selected color: https://iro.js.org/guide.html#selected-color-api
+  
+    var element = document.getElementById("a");
+    element.style.backgroundColor = color.hexString;
+  
+    hexInput.value = color.hexString;
+  });
+  
+  hexInput.addEventListener('change', function () {
+    sliderPicker.color.hexString = this.value;
+  });
+
+  sliderPicker1.on(["color:init", "color:change"], function (color) {
+  // Show the current color in different formats
+  // Using the selected color: https://iro.js.org/guide.html#selected-color-api
+  
+  var element = document.getElementById("b");
+  element.style.backgroundColor = color.hexString;
+  
+  hexInput1.value = color.hexString;
+});
+
+sliderPicker2.on(["color:init", "color:change"], function (color) {
+  // Show the current color in different formats
+  // Using the selected color: https://iro.js.org/guide.html#selected-color-api
+  
+  var element = document.getElementById("c");
+  element.style.backgroundColor = color.hexString;
+  
+  hexInput2.value = color.hexString;
+});
+  
+sliderPicker3.on(["color:init", "color:change"], function (color) {
+  // Show the current color in different formats
+  // Using the selected color: https://iro.js.org/guide.html#selected-color-api
+  
+  var element = document.getElementById("d");
+  element.style.backgroundColor = color.hexString;
+  
+  hexInput3.value = color.hexString;
+});
+  
+hexInput3.addEventListener('change', function () {
+  sliderPicker3.color.hexString = this.value;
+});
+
+hexInput1.addEventListener('change', function () {
+  sliderPicker1.color.hexString = this.value;
+});
+  
+hexInput2.addEventListener('change', function () {
+  sliderPicker2.color.hexString = this.value;
+});
+  
+</script>
+  <div class="main w3-container" id="tab2" style="margin-top:75px; margin-left: 605px;">
+    <div style="height: 50px;"></div>
+
+    <h1 class="w3-xxxlarge w3-text-red"><b>Theme Based Palette</b></h1>
+  
+    <div style="width: 500px;height: 500px;">
+    </div>
+    <div style="margin-top: 500px;"></div>
+   <p>Palette goes here</p>
+   
+  
+  </div>
+
    
 </body>
 </html> 
